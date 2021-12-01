@@ -41,16 +41,44 @@ body{
     outline: none;
 }
 .input-email{
-        width: 120px;
-        height: 40px;
-        font-family: "Mukta", sans-serif;
-        border-radius: 5px;
-        border-color: rgb(241, 241, 241);
-        border-width: 2px;
-        border-style: solid;
-        background-color: rgb(255, 255, 255);
-        animation-duration: 0.4s;
-        padding: 0px;
+    width: 320px;
+    height: 40px;
+    font-family: "Mukta", sans-serif;
+    border-radius: 5px;
+    border-color: rgb(241, 241, 241);
+    border-width: 2px;
+    border-style: solid;
+    background-color: rgb(255, 255, 255);
+    animation-duration: 0.4s;
+    padding: 0px;
+    padding-left: 2%;
+    outline: none;
+}
+.input-password{
+    width: 349px;
+    height: 40px;
+    font-family: "Mukta", sans-serif;
+    border-radius: 5px;
+    border-color: rgb(241, 241, 241);
+    border-width: 2px;
+    border-style: solid;
+    background-color: rgb(255, 255, 255);
+    animation-duration: 0.4s;
+    padding: 0px;
+        padding-left: 2%;
+        outline: none;
+}
+.input-confirm{
+    width: 349px;
+    height: 40px;
+    font-family: "Mukta", sans-serif;
+    border-radius: 5px;
+    border-color: rgb(241, 241, 241);
+    border-width: 2px;
+    border-style: solid;
+    background-color: rgb(255, 255, 255);
+    animation-duration: 0.4s;
+    padding: 0px;
         padding-left: 2%;
         outline: none;
 }
@@ -61,10 +89,58 @@ body{
     justify-content: center;
     width: 225px;
 }
+.input-slot-email{
+    margin-top: 5px;
+    margin-left: 0px;
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    flex-direction: row;
+}
+.input-slot-password{
+    margin-top: 5px;
+    margin-left: 0px;
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    flex-direction: row;
+}
+.input-slot-confirm{
+    margin-top: 5px;
+    margin-left: 0px;
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    flex-direction: row;
+}
 .input-name{
     width: fit-content;
     height: fit-content;
     margin: auto;
+    font-size: 16px;
+}
+.input-name-email{
+    width: fit-content;
+    height: fit-content;
+    margin: auto;
+    margin-right: 10px;
+    margin-left: 26px;
+    font-size: 16px;
+}
+.input-name-password{
+    width: fit-content;
+    height: fit-content;
+    margin: auto;
+    margin-right: 10px;
+    margin-left: 26px;
+    font-size: 16px;
+}
+.input-name-confirm{
+    width: fit-content;
+    height: fit-content;
+    margin: auto;
+    margin-right: 10px;
+    margin-left: 26px;
     font-size: 16px;
 }
 .first-block{
@@ -72,7 +148,43 @@ body{
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    width: 100%;
 }
 .second-block{
-
+    width: 100%;
+}
+.third-block{
+    width: 100%;
+    height: 230px;
+}
+.fourth-block{
+    width: 100%;
+    height: 230px;
+}
+.password-check{
+    width: 80%;
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    align-content: space-around;
+    border-radius: 5px;
+    border-color: rgb(241, 241, 241);
+    border-width: 2px;
+    border-style: solid;
+    margin: auto;
+    margin-top: 5px;
+}
+.spec-name{
+    font-size: 10px;
+    margin-left: 5px;
+    color: #000000
+}
+.password-spec{
+    font-size: 5px;
+    width: 125px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: rgb(255, 0, 0);
 }
