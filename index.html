@@ -18,44 +18,68 @@
             <div class="first-block">
                 <div class="input-slot">
                     <h1 class="input-name">First name: </h1>
-                    <input placeholder="" class="input" />
+                    <input placeholder="" class="input" id="first-name" />
                 </div>
                 <div class="second">
                     <div class="input-slot">
                         <h1 class="input-name">Last name: </h1>
-                        <input placeholder="" class="input" />
+                        <input placeholder="" class="input" id="last-name" />
                     </div>
                 </div>
             </div>
             <div class="second-block">
-                    <div class="input-slot-email">
-                            <h1 class="input-name-email">Email address: </h1>
-                            <input placeholder="" class="input-email" />
-                        </div>
+                <div class="input-slot-email">
+                    <h1 class="input-name-email">Email address: </h1>
+                    <input placeholder="" class="input-email" />
+                </div>
             </div>
             <div class="third-block">
                 <div class="input-slot-password">
-                        <h1 class="input-name-password">Password: </h1>
-                        <input placeholder="" class="input-password" />
+                    <h1 class="input-name-password">Password: </h1>
+                    <button class="visibility">
+                        <i class="fas fa-eye"></i>
+                    </button>
+                    <input placeholder="" class="input-password" type="password" />
+                </div>
+                <div class="password-check">
+                    <div class="columne-1">
+                        <div id="8-characters" class="password-spec">
+                            <i class="fas fa-circle"></i>
+                            <h1 class="spec-name">At least 8 characters.</h1>
+                        </div>
+                        <div id="special-character" class="password-spec">
+                            <i class="fas fa-circle"></i>
+                            <h1 class="spec-name">At least 1 special character.</h1>
+                        </div>
+                        <div id="uppercase" class="password-spec">
+                            <i class="fas fa-circle"></i>
+                            <h1 class="spec-name">Uppercase letters.</h1>
+                        </div>
                     </div>
-                    <div class="password-check">
-                        <div class="columne-1">
-                        <div id="8-characters" class="password-spec"><i class="fas fa-circle"></i><h1 class="spec-name">At least 8 characters.</h1></div>
-                        <div id="special-character" class="password-spec"><i class="fas fa-circle"></i><h1 class="spec-name">At least 1 special character.</h1></div>
-                        <div id="uppercase" class="password-spec"><i class="fas fa-circle"></i><h1 class="spec-name">Uppercase letters.</h1></div>
+                    <div class="columne-2">
+                        <div id="lowercase" class="password-spec">
+                            <i class="fas fa-circle"></i>
+                            <h1 class="spec-name">Lowercase letters.</h1>
+                        </div>
+                        <div id="numbers" class="password-spec">
+                            <i class="fas fa-circle"></i>
+                            <h1 class="spec-name">Numbers.</h1>
+                        </div>
                     </div>
-                        <div class="columne-2">
-                        <div id="lowercase" class="password-spec"><i class="fas fa-circle"></i><h1 class="spec-name">Lowercase letters.</h1></div>
-                        <div id="numbers" class="password-spec"><i class="fas fa-circle"></i><h1 class="spec-name">Numbers.</h1></div>
-                    </div>
-                    </div>
-                    <div class="fourth-block">
-                            <div class="input-slot-confirm">
-                                    <h1 class="input-name-confirm">Confirm password: </h1>
-                                    <input placeholder="" class="input-confirm" />
-                                </div>
+                </div>
+            </div>
+            <div class="fourth-block">
+                <div class="input-slot-confirm">
+                    <h1 class="input-name-confirm">Confirm password: </h1>
+                    <input placeholder="" class="input-confirm" type="password" />
+                </div>
+            </div>
+            <button class="sign-up-button">
+                <i class="fas fa-user-plus"></i>
+                Sign up
+            </button>
         </div>
-        </div>
+    </div>
 </body>
 <script src="script.js"></script>
 

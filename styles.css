@@ -5,13 +5,14 @@ html{
     font-family: 'Mukta', sans-serif;
 }
 body{
+    background-color: #654de4;
     margin: 0px;
     width: 100%;
     height: 100%;
     display: flex;
 }
 .main{
-    background-color: #654de4;
+
     width: 100%;
     height: 100%;
     display: flex;
@@ -25,6 +26,11 @@ body{
     margin: auto;
     border-radius: 15px;
     background-color: #FFF;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
 }
 .input{
     width: 120px;
@@ -69,7 +75,7 @@ body{
         outline: none;
 }
 .input-confirm{
-    width: 349px;
+    width: 290px;
     height: 40px;
     font-family: "Mukta", sans-serif;
     border-radius: 5px;
@@ -155,11 +161,10 @@ body{
 }
 .third-block{
     width: 100%;
-    height: 230px;
+    position: relative;
 }
 .fourth-block{
     width: 100%;
-    height: 230px;
 }
 .password-check{
     width: 80%;
@@ -187,4 +192,26 @@ body{
     flex-direction: row;
     align-items: center;
     color: rgb(255, 0, 0);
+}
+.visibility{
+    position: absolute;
+    right: 25px;
+    top: 20px;
+    background: none;
+    border: none;
+    padding: 0px;
+    cursor: pointer;
+}
+.sign-up-button{
+    background-color: #654de4;
+    color: #fff;
+    width: 200px;
+    height: 44px;
+    font-family: 'Mukta', sans-serif;
+    border-radius: 5px;
+    border-color: rgb(241 241 241);
+    border-width: 0px;
+    cursor: pointer;
+    margin-top: 6px;
+    padding: 0px;
 }

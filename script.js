@@ -1,17 +1,13 @@
-let password = document.querySelector(".password");
-let email = document.querySelector(".email");
-let user = {};
-const signInButton = document.querySelector(".sign-in");
+let firstName = document.querySelector("#first-name")
+let lastName = document.querySelector("#last-name")
+
+let password = document.querySelector(".input-password");
 let isVisible = false;
 let visButton = document.querySelector(".visibility")
-let buttonIcon = document.getElementsByTagName("i")[1];
-let signIn = ()=>{
-    let textPassword = 
-    user["email"] = email.value
-    user["password"] = password.value
-    console.log(user)
-}
-signInButton.addEventListener("click",signIn);
+let firstNameReg = new RegExp(/^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$/u);
+let validName = true;
+let buttonIcon = document.getElementsByTagName("i")[0];
+
 let visibility = ()=>{
 if (isVisible === false){
     password.removeAttribute("type");
@@ -28,3 +24,14 @@ if (isVisible === false){
 }
 }
 visButton.addEventListener("click", visibility)
+
+let nameValidation = ()=>{
+if(firstNameReg.test(firstName.value) === true)
+{
+validName = true;
+}
+else if (firstNameReg.test(firstName.value) === false)
+{
+validName = false;
+}
+}
