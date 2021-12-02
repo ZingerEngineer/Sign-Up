@@ -216,6 +216,10 @@ body{
     margin-top: 6px;
     padding: 0px;
 }
+.sign-up-button:disabled{
+    background-color: #998cd8;
+    cursor: default;
+}
 .valid{
     color: rgb(16 255 90);
     text-shadow: 0px 0px 5px rgb(16 255 90);
@@ -233,4 +237,15 @@ body{
     display: flex;
     flex-direction: row;
     align-items: center;
+}
+.inputValid{
+    border-color: rgb(16 255 90);
+    box-shadow: 0px 0px 4px rgb(16 255 90 / 50%);
+}
+.inputInValid{
+    border-color: rgb(255 16 16);
+    box-shadow: 0px 0px 6px rgbrgb(255 16 16);
+}
+.input-confirm:disabled{
+    border: none;
 }
