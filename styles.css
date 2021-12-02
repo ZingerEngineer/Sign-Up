@@ -183,7 +183,8 @@ body{
 .spec-name{
     font-size: 10px;
     margin-left: 5px;
-    color: #000000
+    color: #000000;
+    text-shadow: none;
 }
 .password-spec{
     font-size: 5px;
@@ -191,7 +192,7 @@ body{
     display: flex;
     flex-direction: row;
     align-items: center;
-    color: rgb(255, 0, 0);
+    color: rgb(108 108 108);
 }
 .visibility{
     position: absolute;
@@ -214,4 +215,22 @@ body{
     cursor: pointer;
     margin-top: 6px;
     padding: 0px;
+}
+.valid{
+    color: rgb(16 255 90);
+    text-shadow: 0px 0px 5px rgb(16 255 90);
+    font-size: 5px;
+    width: 125px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.inValid{
+    color: rgb(255 16 16);
+    text-shadow: 0px 0px 5px rgb(255 16 16);
+    font-size: 5px;
+    width: 125px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
