@@ -15,7 +15,7 @@ body{
     width: 50%;
     height: 100%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-content: center;
 }
@@ -31,8 +31,20 @@ body{
     align-items: center;
     margin-right: auto;
 }
+.left-content{
+    height: 380px;
+    width: 50%;
+    display: flex;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
 .input{
-    width: 120px;
+width: 90px;
     height: 40px;
     font-family: "Mukta", sans-serif;
     border-radius: 5px;
@@ -60,7 +72,7 @@ body{
     outline: none;
 }
 .input-password{
-    width: 349px;
+    width: 297px;
     height: 40px;
     font-family: "Mukta", sans-serif;
     border-radius: 5px;
@@ -70,8 +82,8 @@ body{
     background-color: rgb(255, 255, 255);
     animation-duration: 0.4s;
     padding: 0px;
-        padding-left: 2%;
-        outline: none;
+    padding-left: 2%;
+    outline: none;
 }
 .input-confirm{
     width: 290px;
@@ -92,7 +104,6 @@ body{
     margin-left: 0px;
     display: flex;
     justify-content: center;
-    width: 225px;
 }
 .input-slot-email{
     margin-top: 5px;
@@ -119,40 +130,35 @@ body{
     flex-direction: row;
 }
 .input-name{
-    width: fit-content;
     height: fit-content;
     margin: auto;
-    font-size: 16px;
+    font-size: 13px;
+    width: 65px;
 }
 .input-name-email{
-    width: fit-content;
+    width: 96px;
     height: fit-content;
     margin: auto;
-    margin-right: 10px;
-    margin-left: 26px;
-    font-size: 16px;
+    margin-left: 17px;
+    font-size: 13px;
 }
 .input-name-password{
-    width: fit-content;
-    height: fit-content;
+    width: 45px;
     margin: auto;
-    margin-right: 10px;
-    margin-left: 26px;
-    font-size: 16px;
+    margin-left: 17px;
+    font-size: 13px;
 }
 .input-name-confirm{
-    width: fit-content;
-    height: fit-content;
+    width: 120px;
     margin: auto;
-    margin-right: 10px;
-    margin-left: 26px;
-    font-size: 16px;
+    margin-left: 17px;
+    font-size: 13px;
 }
 .first-block{
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     width: 100%;
 }
 .second-block{
@@ -195,7 +201,7 @@ body{
 }
 .visibility{
     position: absolute;
-    right: 25px;
+    right: 10px;
     top: 20px;
     background: none;
     border: none;
@@ -206,13 +212,15 @@ body{
     background-color: #654de4;
     color: #fff;
     width: 200px;
-    height: 44px;
+    height: 40px;
     font-family: 'Mukta', sans-serif;
     border-radius: 5px;
     border-color: rgb(241 241 241);
     border-width: 0px;
     cursor: pointer;
-    margin-top: 6px;
+    margin: auto;
+    margin-bottom: 0px;
+    margin-top: 5px;
     padding: 0px;
 }
 .sign-up-button:disabled{
@@ -247,4 +255,13 @@ body{
 }
 .input-confirm:disabled{
     border: none;
+}
+.headerOnRight{
+    font-size: 50px;
+    color: #FFF;
+    margin-left: 30px;
+}
+.signUpPic{
+    width: 600px;
+    margin: auto;
 }
