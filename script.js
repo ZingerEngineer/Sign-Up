@@ -4,6 +4,7 @@ let email = document.querySelector(".input-email");
 let password = document.querySelector(".input-password");
 let confirmPassword = document.querySelector(".input-confirm");
 let visButton = document.querySelector(".visibility");
+let buttonSignUp = document.querySelector(".sign-up-button")
 let isVisible = false;
 let validFirstName = null;
 let validLastName = null;
@@ -32,14 +33,14 @@ const numbersReg = new RegExp(/^.*(?=.*\d).*$/);
 
 let visibility = () => {
     if (isVisible === false) {
-        password.type = "password"
-        buttonIcon.classList.remove("fas", "fa-eye-slash");
-        buttonIcon.classList.add("fas", "fa-eye");
-        isVisible = true;
-    } else if (isVisible === true) {
         password.type = "text"
         buttonIcon.classList.remove("fas", "fa-eye");
         buttonIcon.classList.add("fas", "fa-eye-slash");
+        isVisible = true;
+    } else if (isVisible === true) {
+        password.type = "password"
+        buttonIcon.classList.remove("fas", "fa-eye-slash");
+        buttonIcon.classList.add("fas", "fa-eye");
         isVisible = false;
     }
 }
@@ -93,6 +94,8 @@ let passwordSpec4 = () => {
     }
 }
 
+
+
 let passwordSpec5 = () => {
     if (numbersReg.test(password.value) == false) {
         numbers.classList.remove("valid")
@@ -105,22 +108,38 @@ let passwordSpec5 = () => {
     }
 }
 
+let passwordValid = ()=>{
+    if( validSpec1 == true 
+        && validSpec2 == true 
+        && validSpec3 == true 
+        && validSpec4 == true 
+        && validSpec5 == true)
+        {
+            validPassowrd = true;
+        }
+        else{validPassowrd = false}
+}
+
 let firstNameValidation = () => {
     if (firstNameReg.test(firstName.value) === true) {
         firstName.classList.remove("inputInValid")
         firstName.classList.add("inputValid")
+        validFirstName = true;
     } else if (firstNameReg.test(firstName.value) === false) {
         firstName.classList.remove("inputValid")
         firstName.classList.add("inputInValid")
+        validFirstName = false;
     }
 }
 let lastNameValidation = () => {
     if (lastNameReg.test(lastName.value) === true) {
         lastName.classList.remove("inputInValid")
         lastName.classList.add("inputValid")
+        validLastName = true;
     } else if (lastNameReg.test(lastName.value) === false) {
         lastName.classList.remove("inputValid")
         lastName.classList.add("inputInValid")
+        validLastName = false;
     }
 }
 
@@ -128,9 +147,11 @@ let emailValidation = () => {
     if (emailReg.test(email.value) === true) {
         email.classList.remove("inputInValid")
         email.classList.add("inputValid")
+        validEmail = true;
     } else if (emailReg.test(email.value) === false) {
         email.classList.remove("inputValid")
         email.classList.add("inputInValid")
+        validEmail = false;
     }
 }
 
@@ -146,38 +167,36 @@ let confirmation = () => {
     }
 }
 
+
+let signUp = () => {
+        console.log(validConfirm,
+            validEmail,
+            validFirstName,
+            validLastName,
+            validPassowrd)
+        if (validFirstName == true
+            && validLastName == true
+            && validEmail == true
+            && validPassowrd == true
+            && validConfirm == true) {
+            buttonSignUp.removeAttribute("disabled")
+        } else { buttonSignUp.setAttribute("disabled", "true") }
+    }
+
+password.addEventListener("input" , passwordValid)
+confirmPassword.addEventListener("input" , passwordValid)
 password.addEventListener("input", passwordSpec1)
 password.addEventListener("input", passwordSpec2)
 password.addEventListener("input", passwordSpec3)
 password.addEventListener("input", passwordSpec4)
 password.addEventListener("input", passwordSpec5)
+password.addEventListener("input", confirmation)
 confirmPassword.addEventListener("input", confirmation)
+firstName.addEventListener("input", signUp)
+lastName.addEventListener("input", signUp)
+email.addEventListener("input", signUp)
+password.addEventListener("input", signUp)
+confirmPassword.addEventListener("input", signUp)
 firstName.addEventListener("input", firstNameValidation)
 lastName.addEventListener("input", lastNameValidation)
 email.addEventListener("input", emailValidation)
-let formValidation = () => {
-    if (emailReg.test(email.value) === true) {
-        validEmail = true;
-    }
-    else if (emailReg.test(email.value) === false) {
-        validEmail = false;
-    }
-    if (firstNameReg.test(firstName.value) === true) {
-        validFirstName = true;
-    }
-    else if (firstNameReg.test(firstName.value) === false) {
-        validFirstName = false;
-    }
-    if (lastNameReg.test(lastName.value) === true) {
-        validLastName = true;
-    }
-    else if (lastNameReg.test(lastName.value) === false) {
-        validLastName = false;
-    }
-    if (passwordReg.test(password.value) === true) {
-        validLastPassword = true;
-    }
-    else if (passwordReg.test(password.value) === false) {
-        validPassowrd = false;
-    }
-}
