@@ -1,27 +1,16 @@
-let firstName = document.querySelector("#first-name");
-let lastName = document.querySelector("#last-name");
-let email = document.querySelector(".input-email");
-let password = document.querySelector(".input-password");
-let confirmPassword = document.querySelector(".input-confirm");
-let visButton = document.querySelector(".visibility");
-let buttonSignUp = document.querySelector(".sign-up-button")
-let isVisible = false;
-let validFirstName = null;
-let validLastName = null;
-let validEmail = null;
-let validPassowrd = null;
-let validConfirm = null;
-let validSpec1 = null;
-let validSpec2 = null;
-let validSpec3 = null;
-let validSpec4 = null;
-let validSpec5 = null;
-let eightCharacters = document.querySelector("#spec1");
-let oneSpecial = document.querySelector("#spec2");
-let upperCase = document.querySelector("#spec3");
-let lowerCase = document.querySelector("#spec4");
-let numbers = document.querySelector("#spec5");
-let buttonIcon = document.getElementsByTagName("i")[0];
+const firstName = document.querySelector("#first-name");
+const lastName = document.querySelector("#last-name");
+const email = document.querySelector(".input-email");
+const password = document.querySelector(".input-password");
+const confirmPassword = document.querySelector(".input-confirm");
+const visButton = document.querySelector(".visibility");
+const buttonSignUp = document.querySelector(".sign-up-button")
+const eightCharacters = document.querySelector("#eight-characters");
+const oneSpecial = document.querySelector("#special-character");
+const upperCase = document.querySelector("#upper-case");
+const lowerCase = document.querySelector("#lower-case");
+const digits = document.querySelector("#digits");
+const buttonIcon = document.getElementsByTagName("i")[0];
 const emailReg = new RegExp(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
 const firstNameReg = new RegExp(/^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$/u);
 const lastNameReg = new RegExp(/^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$/u);
@@ -30,6 +19,20 @@ const specialReg = new RegExp(/^.*(?=.*[!#$%&?@ "]).*$/);
 const upperReg = new RegExp(/^.*(?=.*[A-Z]).*$/);
 const lowerReg = new RegExp(/^.*(?=.*[a-z]).*$/);
 const numbersReg = new RegExp(/^.*(?=.*\d).*$/);
+let isVisible = false;
+let validFirstName = null;
+let validLastName = null;
+let validEmail = null;
+let validPassowrd = null;
+let validConfirm = null;
+let validSignUp = null;
+let isEightCharacters = null;
+let hasSpecial = null;
+let hasUpperCase = null;
+let hasLowerCase = null;
+let hasDigit = null;
+
+
 
 let visibility = () => {
     if (isVisible === false) {
@@ -44,80 +47,75 @@ let visibility = () => {
         isVisible = false;
     }
 }
-visButton.addEventListener("click", visibility)
 
-let passwordSpec1 = () => {
+let passwordLength = () => {
     if (password.value.length >= 8) {
         eightCharacters.classList.remove("inValid")
         eightCharacters.classList.add("valid")
-        validSpec1 = true;
+        isEightCharacters = true;
     } else if (password.value.length < 8) {
         eightCharacters.classList.remove("valid")
         eightCharacters.classList.add("inValid")
-        validSpec1 = false;
+        isEightCharacters = false;
     }
-
 }
 
-let passwordSpec2 = () => {
+let passwordSpecialCharacter = () => {
     if (specialReg.test(password.value) == false) {
         oneSpecial.classList.remove("valid")
         oneSpecial.classList.add("inValid")
-        validSpec2 = false
+        hasSpecial = false
     } else if (specialReg.test(password.value) == true) {
         oneSpecial.classList.remove("inValid")
         oneSpecial.classList.add("valid")
-        validSpec2 = true;
+        hasSpecial = true;
     }
 }
 
-let passwordSpec3 = () => {
+let passwordUpperCase = () => {
     if (upperReg.test(password.value) == false) {
         upperCase.classList.remove("valid")
         upperCase.classList.add("inValid")
-        validSpec3 = false;
+        hasUpperCase = false;
     } else if (upperReg.test(password.value) == true) {
         upperCase.classList.remove("inValid")
         upperCase.classList.add("valid")
-        validSpec3 = true
+        hasUpperCase = true
     }
 }
-let passwordSpec4 = () => {
+let passwordLowerCase = () => {
     if (lowerReg.test(password.value) == false) {
         lowerCase.classList.remove("valid")
         lowerCase.classList.add("inValid")
-        validSpec4 = false;
+        hasLowerCase = false;
     } else if (lowerReg.test(password.value) == true) {
         lowerCase.classList.remove("inValid")
         lowerCase.classList.add("valid")
-        validSpec4 = true;
+        hasLowerCase = true;
     }
 }
 
-
-
-let passwordSpec5 = () => {
+let passwordDigits = () => {
     if (numbersReg.test(password.value) == false) {
-        numbers.classList.remove("valid")
-        numbers.classList.add("inValid")
-        validSpec5 = false;
+        digits.classList.remove("valid")
+        digits.classList.add("inValid")
+        hasDigit = false;
     } else if (numbersReg.test(password.value) == true) {
-        numbers.classList.remove("inValid")
-        numbers.classList.add("valid")
-        validSpec5 = true;
+        digits.classList.remove("inValid")
+        digits.classList.add("valid")
+        hasDigit = true;
     }
 }
 
-let passwordValid = ()=>{
-    if( validSpec1 == true 
-        && validSpec2 == true 
-        && validSpec3 == true 
-        && validSpec4 == true 
-        && validSpec5 == true)
-        {
-            validPassowrd = true;
-        }
-        else{validPassowrd = false}
+let passwordValidation = () => {
+    if (isEightCharacters == true
+        && hasSpecial == true
+        && hasUpperCase == true
+        && hasLowerCase == true
+        && hasDigit == true) {
+        validPassowrd = true;
+    }
+    else { validPassowrd = false }
 }
 
 let firstNameValidation = () => {
@@ -131,6 +129,7 @@ let firstNameValidation = () => {
         validFirstName = false;
     }
 }
+
 let lastNameValidation = () => {
     if (lastNameReg.test(lastName.value) === true) {
         lastName.classList.remove("inputInValid")
@@ -167,36 +166,48 @@ let confirmation = () => {
     }
 }
 
+let signUpValidity = () => {
+    if (validFirstName == true
+        && validLastName == true
+        && validEmail == true
+        && validPassowrd == true
+        && validConfirm == true) {
+        validSignUp = true;
+        buttonSignUp.removeAttribute("disabled");
+    } else {
+        buttonSignUp.setAttribute("disabled", "true");
+        validSignUp = false;
+    }
+}
 
 let signUp = () => {
-        console.log(validConfirm,
-            validEmail,
-            validFirstName,
-            validLastName,
-            validPassowrd)
-        if (validFirstName == true
-            && validLastName == true
-            && validEmail == true
-            && validPassowrd == true
-            && validConfirm == true) {
-            buttonSignUp.removeAttribute("disabled")
-        } else { buttonSignUp.setAttribute("disabled", "true") }
+    if (validSignUp == true){
+        let user = new Object()
+        user.name = firstName.value;
+        user.lastName = lastName.value;
+        user.email = email.value;
+        user.password = password.value;
+        console.log(user);
     }
+}
 
-password.addEventListener("input" , passwordValid)
-confirmPassword.addEventListener("input" , passwordValid)
-password.addEventListener("input", passwordSpec1)
-password.addEventListener("input", passwordSpec2)
-password.addEventListener("input", passwordSpec3)
-password.addEventListener("input", passwordSpec4)
-password.addEventListener("input", passwordSpec5)
-password.addEventListener("input", confirmation)
-confirmPassword.addEventListener("input", confirmation)
-firstName.addEventListener("input", signUp)
-lastName.addEventListener("input", signUp)
-email.addEventListener("input", signUp)
-password.addEventListener("input", signUp)
-confirmPassword.addEventListener("input", signUp)
+visButton.addEventListener("click", visibility)
 firstName.addEventListener("input", firstNameValidation)
 lastName.addEventListener("input", lastNameValidation)
 email.addEventListener("input", emailValidation)
+password.addEventListener("input", passwordLength)
+password.addEventListener("input", passwordSpecialCharacter)
+password.addEventListener("input", passwordUpperCase)
+password.addEventListener("input", passwordLowerCase)
+password.addEventListener("input", passwordDigits)
+password.addEventListener("input", passwordValidation)
+password.addEventListener("input", confirmation)
+confirmPassword.addEventListener("input", passwordValidation)
+confirmPassword.addEventListener("input", confirmation)
+firstName.addEventListener("input", signUpValidity)
+lastName.addEventListener("input", signUpValidity)
+email.addEventListener("input", signUpValidity)
+password.addEventListener("input", signUpValidity)
+confirmPassword.addEventListener("input", signUpValidity)
+buttonSignUp.addEventListener("click", signUp)
+

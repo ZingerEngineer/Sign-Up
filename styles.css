@@ -42,9 +42,15 @@ body{
     flex-direction: column;
     justify-content: space-around;
 }
-
+.right-content{
+    width: 70%;
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    justify-content: space-around;
+}
 .input{
-width: 90px;
+    width: 90px;
     height: 40px;
     font-family: "Mukta", sans-serif;
     border-radius: 5px;
@@ -227,6 +233,9 @@ width: 90px;
     background-color: #998cd8;
     cursor: default;
 }
+.sign-up-button:focus{
+    border: none;
+}
 .valid{
     color: rgb(16 255 90);
     text-shadow: 0px 0px 5px rgb(16 255 90);
@@ -251,17 +260,28 @@ width: 90px;
 }
 .inputInValid{
     border-color: rgb(255 16 16);
-    box-shadow: 0px 0px 6px rgbrgb(255 16 16);
+    box-shadow: 0px 0px 6px rgb(255 16 16 / 67%)
 }
 .input-confirm:disabled{
     border: none;
 }
 .headerOnRight{
-    font-size: 50px;
+    font-size: 40px;
     color: #FFF;
     margin-left: 30px;
+    position: relative;
+}
+.under-header{
+    width: 612px;
+    margin: 0px;
+    color: #FFF;
+    top: 120px;
+    right: 11px;
+    font-size: 12px;
+    position: absolute;
 }
 .signUpPic{
-    width: 600px;
+    width: 450px;
     margin: auto;
+    padding: 88px;
 }
